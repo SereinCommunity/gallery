@@ -1,0 +1,10 @@
+{
+    "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-index.json",
+    "repo": "SereinCommunity/serein-phira-broadcast",
+    "authors": [
+        {
+            "name": "lgc2333",
+            "description": "17 y.o. / Programming Hobbyist / Otaku / Internet Trash"
+        }
+    ]
+}

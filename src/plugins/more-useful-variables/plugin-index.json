@@ -1,0 +1,10 @@
+{
+    "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-index.json",
+    "repo": "SereinCommunity/MoreUsefulVariables",
+    "authors": [
+        {
+            "name": "Zaitonn",
+            "description": "Serein作者"
+        }
+    ]
+}

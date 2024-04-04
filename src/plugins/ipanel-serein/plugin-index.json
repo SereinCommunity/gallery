@@ -1,0 +1,10 @@
+{
+    "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-index.json",
+    "repo": "iPanelDev/iPanel-Serein",
+    "authors": [
+        {
+            "name": "Zaitonn",
+            "description": "Serein作者"
+        }
+    ]
+}

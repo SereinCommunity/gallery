@@ -1,0 +1,10 @@
+{
+    "$schema": "https://sereincommunity.github.io/json-schemas/v2/data-info.json",
+    "name": "PNX",
+    "description": "适用于PowerNukkitX的正则",
+    "authors": [],
+    "targetingSerein": [
+        "1.3.x",
+        "1.2.x"
+    ]
+}
