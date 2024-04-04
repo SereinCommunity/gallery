@@ -1,0 +1,57 @@
+name: 提交插件
+description: 极大扩展Serein的功能。只有你想不到，没有插件做不到
+title: "提交插件: `<在此处填写插件ID>`"
+labels: ["🧩Plugin"]
+body:
+  - type: input
+    attributes:
+      label: 插件ID
+      description: 用于标识和区分插件。需要满足正则`^[a-zA-Z][a-zA-Z0-9\\-]{4,25}$`
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 仓库
+      description: 存放插件信息（`plugin-info.json`）的仓库，格式为 `所有者/仓库名`。例：`SereinCommunity/stdio`
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 分支
+      description: 存放插件信息（`plugin-info.json`）的仓库的分支。未填写则使用该仓库的默认分支
+
+  - type: input
+    attributes:
+      label: 路径
+      description: 插件信息（`plugin-info.json`）的路径。未填写则使用根目录
+
+  - type: textarea
+    attributes:
+      label: 作者
+      description: 可填写多个插件的作者；必须是GitHub用户
+      placeholder: |
+        @用户名1 @用户名2
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 插件自述文件
+      description: 一篇插件的介绍或教程，将会被保存在根目录下，并随社区文档一同发布
+      placeholder: |
+        此插件可以...
+
+  - type: checkboxes
+    attributes:
+      label: 检查项
+      options:
+        - label: 我已阅读完文档
+          required: true
+        - label: 我已确认插件ID符合规则（`^[a-zA-Z][a-zA-Z0-9\\-]{4,25}$`）
+          required: true
+        - label: 我已确认所填写项均正确
+          required: true
+        - label: 我已确认此插件不会违反当地的法律法规
+          required: true

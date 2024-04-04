@@ -1,0 +1,54 @@
+name: 提交数据文件
+description: 提交你的文件
+title: "提交数据文件: `<在此处填写数据文件名称>`"
+labels: ["📄Data"]
+body:
+  - type: input
+    attributes:
+      label: 名称
+      description: 方便用户区分文件
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 描述
+      description: 方便用户了解文件用途
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 作者
+      description: 可填写多个插件的作者；必须是GitHub用户
+      placeholder: |
+        @用户名1 @用户名2
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 数据内容
+      render: json with comments
+      description: 将文件内容复制后粘贴在此处
+      placeholder: |
+        { ... }
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: 适用Serein的版本
+      options:
+        - label: "`v1.2.x`"
+        - label: "`v1.3.x`"
+        - label: "`v2.0.x`"
+
+  - type: checkboxes
+    attributes:
+      label: 检查项
+      options:
+        - label: 我已阅读完文档
+          required: true
+        - label: 我已确认所填写项均正确
+          required: true

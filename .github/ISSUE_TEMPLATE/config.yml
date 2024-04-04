@@ -1,0 +1,9 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Serein相关
+    url: https://github.com/SereinDev/Serein/issues/new
+    about: Serein的问题请在此仓库反馈
+  
+  - name: 发布教程
+    url: https://sereincommunity.github.io/docs
+    about: 提交Issue前务必阅读完此文档

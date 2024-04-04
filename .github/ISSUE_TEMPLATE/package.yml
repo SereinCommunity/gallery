@@ -1,0 +1,47 @@
+name: 提交整合包
+description: 一键启动，随时随地开服
+title: "提交整合包: `<在此处填写整合包名称>`"
+labels: ["📦Package"]
+body:
+  - type: input
+    attributes:
+      label: 名称
+      description: 方便用户区分整合包
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 描述
+      description: 方便用户了解整合包内容
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 链接
+      description: 论坛帖子/网盘/自建站
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: 作者
+      description: 可填写多个插件的作者；必须是GitHub用户
+      placeholder: |
+        @用户名1 @用户名2
+    validations:
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: 检查项
+      options:
+        - label: 我已阅读完文档
+          required: true
+        - label: 我已确认所填写项均正确
+          required: true
+        - label: 我已确认此整合包无侵权风险
+          required: true
+        - label: 我已确认此整合包不会违反当地的法律法规
+          required: true
