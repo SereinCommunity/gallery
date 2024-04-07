@@ -1,3 +1,4 @@
 # 扩展索引
 
-你可以在[此处](https://sereincommunity.github.io/docs/)阅读更多信息
+- [文档](https://sereincommunity.github.io/docs/)
+- [提交](https://github.com/SereinCommunity/gallery/issues/new/choose)

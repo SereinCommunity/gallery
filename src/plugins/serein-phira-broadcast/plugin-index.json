@@ -1,6 +1,7 @@
 {
     "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-index.json",
-    "repo": "SereinCommunity/serein-phira-broadcast",
+    "owner": "SereinCommunity",
+    "repoName": "serein-phira-broadcast",
     "authors": [
         {
             "name": "lgc2333",

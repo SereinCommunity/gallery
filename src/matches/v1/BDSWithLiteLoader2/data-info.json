@@ -7,9 +7,5 @@
             "name": "Zaitonn",
             "description": "Serein作者"
         }
-    ],
-    "targetingSerein": [
-        "1.3.x",
-        "1.2.x"
     ]
 }

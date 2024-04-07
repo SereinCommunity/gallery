@@ -12,8 +12,15 @@ body:
 
   - type: input
     attributes:
-      label: 仓库
-      description: 存放插件信息（`plugin-info.json`）的仓库，格式为 `所有者/仓库名`。例：`SereinCommunity/stdio`
+      label: 所有者
+      description: 存放插件信息（`plugin-info.json`）的仓库的所有者，可以是用户或组织
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 仓库名称
+      description: 存放插件信息（`plugin-info.json`）的仓库
     validations:
       required: true
 

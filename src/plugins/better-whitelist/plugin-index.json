@@ -1,6 +1,7 @@
 {
     "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-index.json",
-    "repo": "SereinCommunity/BetterWhitelist",
+    "owner": "SereinCommunity",
+    "repoName": "BetterWhitelist",
     "authors": [
         {
             "name": "wait9yan",

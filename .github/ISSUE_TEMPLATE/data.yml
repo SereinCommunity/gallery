@@ -10,6 +10,15 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    attributes:
+      label: 类型
+      options:
+        - 匹配文件
+        - 定时任务文件
+    validations:
+      required: true
+
   - type: input
     attributes:
       label: 描述
@@ -40,9 +49,8 @@ body:
     attributes:
       label: 适用Serein的版本
       options:
-        - label: "`v1.2.x`"
-        - label: "`v1.3.x`"
-        - label: "`v2.0.x`"
+        - label: "`v1.x`"
+        - label: "`v2.x`"
 
   - type: checkboxes
     attributes:
