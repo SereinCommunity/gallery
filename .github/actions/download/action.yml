@@ -19,6 +19,7 @@ runs:
           repository: SereinDev/ExtensionsHelper
           preRelease: true
           latest: true
+          extract: true
           fileName: ExtensionsHelper.win-x64.zip
 
       - name: Download artifact
@@ -35,9 +36,3 @@ runs:
           name: ExtensionsHelper.win-x64
           path: ${{ github.workspace }}
           check_artifacts: true
-      
-      - name: Extract files
-        shell: powershell
-        run: 7z x -y ExtensionsHelper.win-x64.zip
-
-
