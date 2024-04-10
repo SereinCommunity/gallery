@@ -29,7 +29,7 @@ runs:
           repo: SereinDev/ExtensionsHelper
           workflow: build.yml
           workflow_conclusion: success
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ inputs.token }}
           event: push
           name: ExtensionsHelper.win-x64
           path: ${{ github.workspace }}
