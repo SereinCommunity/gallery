@@ -23,7 +23,7 @@ jobs:
           token: ${{github.token}}
 
       - name: Run ExtensionsHelper
-        run:
+        run: |
           ./ExtensionsHelper.exe --version
           ./ExtensionsHelper.exe check ./ -a -t ${{github.token}}
 
