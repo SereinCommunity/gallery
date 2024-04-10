@@ -1,6 +1,7 @@
 {
     "$schema": "https://sereincommunity.github.io/json-schemas/v2/plugin-index.json",
-    "repo": "iPanelDev/iPanel-Serein",
+    "owner": "iPanelDev",
+    "repoName": "iPanel-Serein",
     "authors": [
         {
             "name": "Zaitonn",

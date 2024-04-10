@@ -1,0 +1,42 @@
+name: 下载文件
+
+description: 从Releases或Action下载文件
+
+inputs:
+  token:
+    description: pat
+    required: true
+
+runs:
+  using: 'composite'
+
+  steps:
+      - name: Download latest ExtensionsHelper
+        uses: robinraju/release-downloader@v1.9
+        continue-on-error: true
+        id: download-releases
+        with:
+          repository: SereinDev/ExtensionsHelper
+          preRelease: true
+          fileName: ExtensionsHelper.win-x64.zip
+
+      - name: Download artifact
+        uses: Legit-Labs/action-download-artifact@v2
+        if: ${{ steps.download-releases.outcome == 'failure' }}
+        continue-on-error: true
+        id: download-action
+        with:
+          repo: SereinDev/ExtensionsHelper
+          workflow: build.yml
+          workflow_conclusion: success
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          event: push
+          name: ExtensionsHelper.win-x64
+          path: ${{ github.workspace }}
+          check_artifacts: true
+      
+      - name: Extract files
+        shell: powershell
+        run: 7z x -y ExtensionsHelper.win-x64.zip
+
+
