@@ -1,0 +1,34 @@
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: SereinCommunity/gallery-builder
+          path: gallery-builder
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: |
+          cd gallery-builder
+          pnpm i
+
+      - name: Check all indexes
+        run: |
+          cd gallery-builder
+          pnpm run check -p ../
+        env:
+          TOKEN: ${{ github.token }}
