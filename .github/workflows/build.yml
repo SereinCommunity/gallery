@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: write
+  id-token: write
+  pages: write
 
 jobs:
   build:
@@ -63,7 +65,7 @@ jobs:
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN }}
           message: Updated atomatically at ${{ github.sha }}
           directory: docs
           repository: SereinCommunity/sereincommunity.github.io
