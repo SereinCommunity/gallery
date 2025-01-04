@@ -57,6 +57,7 @@ jobs:
         with:
           repository: SereinCommunity/sereincommunity.github.io
           path: docs
+          token: ${{ secrets.TOKEN }}
       
       - name: Copy gallery
         run: |
@@ -65,7 +66,7 @@ jobs:
       - name: Commit & Push changes
         uses: actions-js/push@master
         with:
-          github_token: ${{ github.token }}
+          github_token: ${{ secrets.TOKEN }}
           message: Updated atomatically at ${{ github.sha }}
           directory: docs
           repository: SereinCommunity/sereincommunity.github.io
