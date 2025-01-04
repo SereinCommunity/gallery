@@ -65,9 +65,10 @@ jobs:
 
       - name: Commit & Push changes
         uses: actions-js/push@master
+        continue-on-error: true
         with:
           github_token: ${{ secrets.TOKEN }}
-          message: Updated atomatically at ${{ github.sha }}
+          message: Updated from `${{ github.sha }}`
           directory: docs
           repository: SereinCommunity/sereincommunity.github.io
 
