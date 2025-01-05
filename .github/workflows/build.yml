@@ -61,7 +61,7 @@ jobs:
       
       - name: Copy gallery
         run: |
-          Copy-Item gallery-builder/output/website/* docs/resources/plugins/ -Recurse -Force
+          Copy-Item gallery-builder/output/website/* docs/plugins/ -Recurse -Force
 
       - name: Commit & Push changes
         uses: actions-js/push@master
