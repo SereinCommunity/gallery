@@ -1,13 +1,17 @@
 on:
   push:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
   id-token: write
   pages: write
+
+concurrency:
+  group: build
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -58,17 +62,22 @@ jobs:
           repository: SereinCommunity/sereincommunity.github.io
           path: docs
           token: ${{ secrets.TOKEN }}
-      
+
       - name: Copy gallery
         run: |
           Copy-Item gallery-builder/output/website/* docs/plugins/ -Recurse -Force
+
+      - name: Get Time
+        id: time
+        uses: nanzm/get-time-action@master
+        with: 
+          format: 'YYYY-MM-DD HH:mm'
 
       - name: Commit & Push changes
         uses: actions-js/push@master
         continue-on-error: true
         with:
           github_token: ${{ secrets.TOKEN }}
-          message: Updated from `${{ github.sha }}`
+          message: "[${{ steps.time.outputs.time }}] Update gallery"
           directory: docs
           repository: SereinCommunity/sereincommunity.github.io
-
