@@ -1,0 +1,21 @@
+{
+    "name": "gallery-builder",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node --loader ts-node/esm src/index.ts",
+        "check": "node --loader ts-node/esm src/index.ts check"
+    },
+    "type": "module",
+    "dependencies": {
+        "@actions/core": "^1.11.1",
+        "@actions/github": "^6.0.1",
+        "@octokit/openapi-types": "^22.2.0",
+        "axios": "^1.9.0",
+        "commander": "^13.1.0",
+        "dotenv": "^16.5.0",
+        "got": "^14.4.7",
+        "js-yaml": "^4.1.0",
+        "octokit": "^3.2.2",
+        "ts-node": "^10.9.2"
+    }
+}

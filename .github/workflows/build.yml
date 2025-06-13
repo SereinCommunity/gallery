@@ -1,7 +1,5 @@
 on:
   push:
-  # schedule:
-  #   - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,40 +19,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          repository: SereinCommunity/gallery-builder
-          path: gallery-builder
-
       - uses: pnpm/action-setup@v4
         with:
           version: 9
 
       - name: Install dependencies
-        run: |
-          cd gallery-builder
-          pnpm i
+        run: pnpm i
 
       - name: Build
-        run: |
-          cd gallery-builder
-          pnpm run start -p ../
+        run: pnpm run start
         env:
           TOKEN: ${{ github.token }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          path: gallery-builder/output
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: gallery-builder/output/gallery
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+          path: output
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -65,7 +45,7 @@ jobs:
 
       - name: Copy gallery
         run: |
-          Copy-Item gallery-builder/output/website/* docs/plugins/ -Recurse -Force
+          Copy-Item output/* docs/ -Recurse -Force
 
       - name: Get Time
         id: time
