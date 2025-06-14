@@ -6,7 +6,7 @@ import { PluginDetailedInfo } from '../../types/pluginDetailedInfo.ts';
 import { Result } from '../../types/result.ts';
 import logger from '../outputs/logger.ts';
 
-const path = join('output', 'public', 'gallery', 'plugins');
+const path = join('output', 'public', 'indexes', 'plugins');
 
 function sort(
   plugins: [string, PluginDetailedInfo][]
