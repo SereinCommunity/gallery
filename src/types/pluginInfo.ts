@@ -15,4 +15,8 @@ export type PluginInfo = {
   authors?: { name: string; description: string }[];
   type: 'js' | 'net';
   entryFile?: string;
+  targets?: {
+    min?: string | null;
+    max?: string | null;
+  };
 };

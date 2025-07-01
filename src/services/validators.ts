@@ -74,6 +74,28 @@ export function validatePluginInfo(
     logger.warn(`[${pluginInfo.id}] 缺少\`tags\`字段`);
   }
 
+  if (pluginInfo.targets) {
+    const versions = [
+      '1.3.0',
+      '1.3.1',
+      '1.3.2',
+      '1.3.3',
+      '1.3.4',
+      '1.3.5',
+      '2.0.0',
+      '2.0.1',
+      '2.1.0',
+    ];
+    if (pluginInfo.targets?.min && !versions.includes(pluginInfo.targets.min)) {
+      throw '`targets.min`字段格式不正确';
+    }
+    if (pluginInfo.targets?.max && !versions.includes(pluginInfo.targets.max)) {
+      throw '`targets.max`字段格式不正确';
+    }
+  } else {
+    logger.warn(`[${pluginInfo.id}] 缺少\`targets\`字段`);
+  }
+
   return {
     id: pluginInfo.id,
     name: pluginInfo.name,
@@ -89,6 +111,10 @@ export function validatePluginInfo(
       : [],
     type: pluginInfo.type,
     entryFile: pluginInfo.entryFile || '',
+    targets: {
+      min: pluginInfo.targets?.min || null,
+      max: pluginInfo.targets?.max || null,
+    },
   };
 }
 

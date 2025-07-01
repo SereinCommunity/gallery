@@ -9,9 +9,10 @@ export type PluginDetailedInfo = {
     stars: number;
     forks: number;
     issues: number;
-    pullRequests: number;
     createAt: string;
     pushedAt: string;
+    language: string | null;
+    size: number;
     updatedAt: string;
     archived: boolean;
     license: string | null;
